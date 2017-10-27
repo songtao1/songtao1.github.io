@@ -114,13 +114,14 @@ footer {
   background: #e4e6f3;
 }
 .company-name-card{
-  width: 7.49rem;
-  height: 4.00rem;
-  background: url('../imgs/company.png') no-repeat;
+  /*width: 7.49rem;
+  height: 4.00rem;*/
+  background: url('../imgs/company.png') no-repeat center;
   background-size: cover;
   margin: 0 auto;
   padding-top: 1rem;
   position: relative;
+  padding-bottom: 1.5rem;
 }
 .card-title{
   text-align: center;
@@ -143,17 +144,17 @@ footer {
 .company-name{
   color: #b1bcfc;
   font-size: 0.3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 }
 .right-btn {
-  background: url('../imgs/right-btn.png');
+  background: url('../imgs/right-btn.png') no-repeat center;
   float: right;
   width: 0.26rem;
   height: 0.50rem;
   background-size: cover;
   position: absolute;
   right: 0.8rem;
-  top: 45%;
+  top: 43%;
 }
 .home-scan-input {
   width: 4rem;
@@ -169,7 +170,7 @@ footer {
 }
 .home-tool {
   width: 100%;
-  background: #e4e6f3 url('../imgs/homebac.png') no-repeat;
+  background: #e4e6f3 url('../imgs/homebac.png') no-repeat top center;
   background-size: cover;
   padding-top: 0.4rem;
 }
@@ -192,7 +193,6 @@ footer {
   padding-top: 0.5rem;
   padding-left: 0.6rem;
   color: #fff;
-  margin-top: 0.5rem;
 }
 .writeicon{
   width: 0.35rem;
