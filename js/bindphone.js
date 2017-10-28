@@ -1,12 +1,16 @@
 $(function() {FastClick.attach(document.body);});
-
+//获取数据
+getCookie();
+var userId=1;
+function getCookie() {
+  userId = $.cookie('open_id');
+}
 $(".bindphone-num").blur(function() {
   testPhone();
 })
 var djsTime,
-    isSend = false,
-    countdown = 10,
-    code;
+    isSend = true,
+    countdown = 120;
 //点击获取校验码
 $(".send-code").click(function() {
   testPhone();
@@ -14,9 +18,8 @@ $(".send-code").click(function() {
     djsTime = setInterval(function() {
       settime();
     },1000)
+    getCode(userId);
   };
-  code = 1234;
-  $(".bind-code").val(code);
 })
 //点击绑定
 $(".bind-btn").click(function() {
@@ -26,39 +29,33 @@ $(".bind-btn").click(function() {
     showModal("请输入校验码！");
     return;
   }
-  if(codeVal!==code) {
-    showModal("验证码错误！");
-    return;
-  }
-
+  bindPhone(userId,codeVal);
 })
 //绑定请求
-function bindPhone () {
+function bindPhone (userId,code) {
+  var params = {open_id:userId+"",code:code,telephone:$(".bindphone-num").val()};
   $.ajax({
-    type:'POST',
-    url:'/a/',
+    type:'post',
+    url:'/api/user/bindphone',
     dataType:'json',
-    data:{name:xxx,age:xxx},
+    data:JSON.stringify(params),
+    contentType:'application/json',
     success:function(data){
-      // code = data.code;
-    },
-    error:function(jqXHR){
-      showModal(jqXHR)
+      showModal("绑定成功！")
     }
 });
 }
 //获取验证码请求
-function getCode() {
+function getCode(userId) {
+  var params = {open_id:userId+"",telephone:$(".bindphone-num").val()};
   $.ajax({
-    type:'POST',
-    url:'/a/',
+    type:'post',
+    url:'http://192.168.1.110:2000/api/user/bindphone',
     dataType:'json',
-    data:{name:xxx,age:xxx},
+    data:JSON.stringify(params),
+    contentType:'application/json',
     success:function(data){
-      // code = data.code;
-    },
-    error:function(jqXHR){
-      showModal(jqXHR)
+      showModal("验证码已发送")
     }
 });
 }
@@ -84,11 +81,11 @@ function testPhone() {
   var phoneVal = $(".bindphone-num").val();
   if(!phoneVal) {
     showModal("请输入手机号");
-    return;
+    return isSend = false;
   }
   if(!myreg.test(phoneVal)){
     showModal("请输入正确的手机号");
-    return;
+    return isSend = false;
   }
   return isSend = true;
 }

@@ -1,6 +1,32 @@
 $(function() {FastClick.attach(document.body);});
+//获取数据
+getCookie();
+var userId=1;
 //所有input初始化
 $(".com-inp-common").attr("disabled","disabled");
+function getCookie() {
+  userId = $.cookie('open_id');
+}
+getData(userId);
+function getData(userId) {
+  $.ajax({
+    type:'get',
+    url:'/api/user/get',
+    dataType:'json',
+    data:{open_id:userId},
+    success:function(d){
+      setData(d.data)
+    },
+  });
+}
+function setData(data) {
+  $(".com-name").val(data.company_name);
+  $(".com-nsrsbh").val(data.tax_number);
+  $(".com-bank").val(data.account_bank);
+  $(".com-zh").val(data.account_number);
+  $(".com-address").val(data.address);
+  $(".com-num").val(data.telephone);
+}
 //点击编辑
 $(".com-edit").click(function() {
   if($(".com-edit").text()==="编辑"){
@@ -13,23 +39,28 @@ $(".com-edit").click(function() {
 })
 //保存数据
 function saveCompanyCard() {
-  console.log($(".com-name").val())
   $(".com-edit").text("编辑");
-  showModal("保存成功！");
+  saveData(userId);
 }
 //保存信息请求
-function saveData() {
+function saveData(userId) {
+  var postData = {
+    open_id:userId,
+    company_name:$(".com-name").val(),
+    tax_number:$(".com-nsrsbh").val(),
+    address:$(".com-address").val(),
+    account_bank:$(".com-bank").val(),
+    account_number:$(".com-zh").val(),
+    telephone:$(".com-num").val()
+  }
   $.ajax({
-    type:'POST',
-    url:'/a/',
+    type:'post',
+    url:'/api/user/edit',
+    data:JSON.stringify(postData),
     dataType:'json',
-    data:{name:xxx,age:xxx},
+    contentType:"application/json",
     success:function(data){
-      // code = data.code;
-      showModal("保存成功！ ")
-    },
-    error:function(jqXHR){
-      showModal(jqXHR)
+      showModal("保存成功！")
     }
   });
 }

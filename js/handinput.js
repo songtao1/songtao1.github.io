@@ -1,5 +1,10 @@
 $(function() {FastClick.attach(document.body);});
-var chy = true;
+//获取数据
+getCookie();
+var userId=1,amount="",jym="",chy = true;
+function getCookie() {
+  userId = $.cookie('open_id');
+}
 //根据发票代码改变提示校验码提示内容
 $(".hand-inp-fpdm").blur(function() {
   testBill();
@@ -17,7 +22,7 @@ if(isNaN(jymVal)) {
 }
 })
 //查验
-$(".hand-btn").click(function() {
+$(".hand-btn").unbind('click').bind('click',function() {
   var aVal = $(".hand-inp-fpdm").val();
   var bVal = $(".hand-inp-fphm").val();
   var cVal = $(".hand-inp-kprq").val();
@@ -29,12 +34,29 @@ $(".hand-btn").click(function() {
   testBill();
   testfphmBill();
   testJym();
-  if(chy){
-    console.log("post")
-  }
   var dateVal = switchTime(cVal);
+  if(chy){
+    postData(dateVal)
+  }
 })
-
+function postData(val) {
+  var cont = ""+","+""+","+$(".hand-inp-fpdm").val()+","+ $(".hand-inp-fphm").val()+","+amount+","+val+","+jym;
+  var params ={open_id:userId,content: cont};
+  $.ajax({
+    type:'post',
+    url:'/api/invoice/check',
+    data:JSON.stringify(params),
+    contentType: "application/json",
+    dataType:'json',
+    success:function(d){
+      if(d.code=="20402"){
+        window.location.href="./error.html";
+      }else{
+        window.location.href="./detail.html?id="+d.data.invoice.id+"&save=1";
+    }
+  }
+  });
+}
 //将时间转换为8位的字符串
 function switchTime(time1) {
 var arr = time1.split("/");
@@ -43,6 +65,7 @@ return str;
 }
 //校验码脚校验
 function testJym() {
+  jym="",amount="";
   var eVal = $(".hand-jym").text() == "校验码";
   var isJymLen = $(".hand-inp-jym").val().length;
   var jymVal = $(".hand-inp-jym").val();
@@ -51,8 +74,10 @@ function testJym() {
         showModal("校验码不正确！");
         return chy = false;
       }else{
-        return chy = true;
+        return chy = true, jym=jymVal;
       }
+  }else{
+    return amount=jymVal;
   }
 }
 //发票号码校验
@@ -84,7 +109,6 @@ if(numLen!==10 && numLen!==12){
 var fpdmVal = parseInt($(".hand-inp-fpdm").val().charAt(7), 10);
 var fpdmVala = parseInt($(".hand-inp-fpdm").val().charAt(0), 10);
 var fpdmValb = $(".hand-inp-fpdm").val().substr(10,2);
-console.log(fpdmValb)
 if(numLen==10){
   if(fpdmVal===3 || fpdmVal===6) {
     console.log("普通发票");
@@ -95,7 +119,7 @@ if(numLen==10){
     console.log("专用发票")
     $(".hand-jym").text("税前金额");
     $(".hand-inp-jym").attr("placeholder","请输入税前金额");
-    return chy = true;
+    return chy = true ;
   }else{
     showModal("发票代码有误！");
     return chy = false;

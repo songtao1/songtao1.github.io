@@ -762,3 +762,19 @@ input[disabled] {
   background:#fff;
   border:1px solid #61b8ff;
 }
+.detail-savebtn {
+  border: none;
+  height: 0.9rem;
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+  line-height: 0.9rem;
+  background: #61b8ff;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 0.3rem;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: none;
+}
