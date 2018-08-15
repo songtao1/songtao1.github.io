@@ -1,370 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <title>商希超&&穆海园结婚邀请</title>
-    <!--
-    	让页面固定宽度为640 如果屏幕尺寸大于640就会自动放大 屏幕尺寸小于640 就会自动缩放
-		user-scalable=no 禁止用户改变窗口大小
-    -->
-    <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.ico" />
-    <meta name="viewport" content="width=640, user-scalable=no">
-    <link rel="stylesheet" href="swiper.min.css">
-    <link rel="stylesheet" href="animate.min.css">
-    <style>
-	    html, body {
-	        position: relative;
-	        height: 100%;
-	    }
-	    body {
-	        background: #eee;
-	        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-	        font-size: 14px;
-	        color:#000;
-	        margin: 0;
-	        padding: 0;
-	    }
-	    .swiper-container {
-	        width: 100%;
-	        height: 100%;
-	    }
-	    /*music*/
-	    .soundButton{
-			cursor: pointer;
-			position: fixed;
-			width: 60px;
-		    height: 60px;
-		    left: 20px;
-		    top: 20px;
-		    z-index: 5;
-			background: url(imgs/music1.png) no-repeat;
-		    background-size: 60px 60px;
-		    animation: change 3s linear infinite;
-		    transform-origin:50% 50%;
-	    }
-	    @keyframes change{
-	    	0%{transform:rotate(0deg);}
-	    	50%{transform:rotate(180deg);}
-	    	100%{transform:rotate(360deg);}
-	    }
-
-	    /*首页*/
-		.page-index {
-			position: relative;
-			background: #fff;
-		}
-		.index-bg {
-			width: 100%;
-			height: 100%;
-		}
-		.index-text{
-			position: absolute;
-			top: 30%;
-			left: 48%;
-			margin-left: -136px;
-			animation: scale 10s linear infinite;
-		    transform-origin:50% 50%;
-		}
-		@keyframes scale{
-	    	0%{transform:rotate(0deg);}
-	    	50%{transform:rotate(180deg);}
-	    	100%{transform:rotate(360deg);}
-	    }
-		.index-arrow {
-			position: absolute;
-			bottom: 5%;
-			left: 50%;
-			margin-left: -21px;
-		}
-
-		.page-index span {
-			width: 85%;
-			position: absolute;
-			color: #653e1d;
-			z-index: 5;
-			font-size: 36px;
-
-		}
-		.bothNames {
-			top: 58%;
-			left: 50%;
-			font-size: 45px;
-			transform: translate(-40%, 50%);
-		}
-		.weddingDay {
-			top: 75%;
-			left: 52%;
-			font-size: 28px;
-			transform: translate(-36%, 50%);
-		}
-
-		.weddingName {
-			top:82%;
-			left: 59%;
-			font-size: 25px;
-			transform: translate(-36%, 50%);
-		}
-
-		.index-fo {
-			width: 101%;
-			height: 60%;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			z-index: 2;
-		}
-
-		.index-fo1 {
-			position: absolute;
-			bottom: 6%;
-			left: 50%;
-			transform:  translate(-50%,50%);
-			z-index: 5
-		}
-
-
-
-
-
-
-
-
-		/*第二页*/
-		.page-second {
-			position: relative;
-			background: url(imgs/secbc.jpg) no-repeat 100%;
-			background-size: 100% 100%;
-		}
-		.second-boy {
-			position: absolute;
-			width: 100%;
-			height:100%;
-
-		}
-		/*第三页*/
-		.page-three {
-			position: relative;
-			background: url(imgs/trid.jpg) no-repeat 100%;
-			background-size: cover;
-		}
-		.tridtext {
-			position: absolute;
-			color: #fff;width: 10px;
-			height: 300px;
-			left: 10%;
-			top: 52%;
-			font-size: 25px;
-		}
-		/*第四页*/
-		.page-four {
-			position: relative;
-			background: url(imgs/for1.jpg) no-repeat ;
-			background-size: 100% 100%;
-		}
-		.four-boy {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			margin-left: -196px;
-			margin-top: -360px;
-			width: 60%;
-			height: 60%;
-			opacity: 0.8;
-			border:6px solid white;
-		}
-		.fortext{
-			position: absolute;
-			font-weight: bold;
-			font-size: 33px;
-			color: #fff;
-			left: 80%;
-			bottom: 5%;
-
-		}
-		.fortext1 {
-			position: absolute;
-			font-size: 25px;
-			width: 70%;
-			bottom: 5%;
-			left: 15%;
-			text-align: center;
-			color: #643c1b;
-			z-index: 7;
-		}
-		.index-fo11 {
-			width: 205%;
-			height: 60%;
-			position: absolute;
-			bottom: -222px;
-			left: 0;
-		}
-		/*第五页*/
-		.page-five span {
-			width: 30%;
-			position: absolute;
-			color: white;
-			font: 14px/1.5 'Microsoft YaHei',arial,tahoma,\5b8b\4f53,sans-serif;
-		}
-		.bothNamesEnd {
-			top: 50%;
-			left: 50%;
-			font-size: 45px;
-			transform: translate(-40%, 50%);
-		}
-		.weddingDayEnd {
-			text-align: center;
-			top: 30%;
-			left: 50%;
-			font-size: 28px;
-			transform: translate(-46%, 50%);
-			line-height: 50px;
-		}
-		.fri{
-			width: 83%;
-			border-radius: 15px;
-			position: absolute;
-			z-index: 3;
-			top: -4%;
-			left: 42%;
-			transform: translate(-40%, 50%);
-		}
-		.fri2 {
-			top:80%;
-			position: absolute;
-			z-index: 3;
-			width: 94%;
-			left: 15%;
-		}
-
-		.page-five .span1 {
-			top: 49%;
-			left: 47%;
-			font-size: 35px;
-			display: block;
-			width: 300px;
-		}
-		.index-fri {
-			width: 101%;
-			height: 60%;
-			position: absolute;
-			bottom: -213px;
-			left: 0;
-			z-index: 2;
-		}
-		.page-five .span2 {
-			top: 59%;
-			left: 26%;
-			display: block;
-			font-size: 30px;
-			display: block;
-			width: 400px;
-			z-index: 5
-		}
-		.page-five .span3 {
-			top: 70%;
-			left: 25%;
-			display: block;
-			font-size: 40px;
-			display: block;
-			width: 400px;
-			z-index: 5;
-			font-weight: bold;
-			color: #351d08;
-
-		}
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./css/public.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <title>首页</title>
 </head>
+
 <body>
-	<!--music-->
-	<div class="soundButton js-soundButton" ></div>
-
-    <!-- Swiper -->
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-        <!-- 背景音乐开始 -->
-
-        	<!-- 1 -->
-            <div class="swiper-slide page-index">
-				<img src="imgs/bodybc.jpg" class="index-bg ani infinite" swiper-animate-effect="pulse" swiper-animate-duration="3.5s" swiper-animate-delay="0.3s">
-				<img src="imgs/item1a.png" class="index-text" >
-				<img src="imgs/indexfo.png" class="index-fo" />
-				<img src="imgs/indexfo1.png" class="index-fo1" />
-
-
-				<img src="imgs/units-icons.png" class="index-arrow ani infinite" swiper-animate-effect="fadeOutUp" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s">
-				<span class="bothNames ani" swiper-animate-effect="fadeIn" swiper-animate-duration="5s" swiper-animate-delay="2s"></span>
-				<span class="weddingDay ani" swiper-animate-effect="fadeIn" swiper-animate-duration="5s" swiper-animate-delay="0.5s">2018年02月01日  星期四</span>
-				<span class="weddingName ani" swiper-animate-effect="fadeIn" swiper-animate-duration="5s" swiper-animate-delay="1s">商希超&nbsp;&&&nbsp;穆海园</span>
+    <header>
+        <img src="imgs/nav_icon.png" class="nav_btn" />
+        <ul class="nav-list">
+            <li><a href="./product.html">产品</a></li>
+            <li><a href="./price.html">价格</a></li>
+            <li><a href="./download.html">下载</a></li>
+            <li><a class="news">资讯</a></li>
+        </ul>
+        <nav>
+            <a href="./index.html"><img alt="" src="imgs/index_logo.png" /></a>
+            <ul>
+                <li>
+                    <a href="./product.html">产品</a>
+                </li>
+                <li>
+                    <a href="./price.html">价格</a>
+                </li>
+                <li>
+                    <a href="./download.html">下载</a>
+                </li>
+                <li>
+                    <a class="news">资讯</a>
+                </li>
+                <li>
+                    <a class="login">登录</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-title-con">
+            <div>
+                <h1>企业发票安全卫士</h1>
+                <h4>数据时代效率至上 全新的发票查验管理方式</h4>
+                <p class="header-text">荣获GICC-2018 中国发票管理领域最佳解决方案</p>
+                <p class="header-btn-con">
+                    <a class="register">立即注册</a>
+                    <a class="freeuse">免费使用</a>
+                </p>
             </div>
-           	<!-- 2 -->
-            <div class="swiper-slide page-second">
-				<img src="imgs/secbc.jpg" class="second-boy ani infinite" swiper-animate-effect="bounceIn" swiper-animate-duration="10s" swiper-animate-delay="0.3s">
-				<img src="imgs/units-icons.png" class="index-arrow ani infinite" swiper-animate-effect="fadeOutUp" swiper-animate-duration="1.5s" swiper-animate-delay="0.1s">
-				<span class="fortext ani infinite" swiper-animate-effect="fadeIn" swiper-animate-duration="5s" swiper-animate-delay="1s">I LOVE you<br>I DO</span>
-            </div>
-            <!-- 3 -->
-            <div class="swiper-slide page-three">
-				<img src="imgs/trid1.jpg" class="second-boy ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="8s" swiper-animate-delay="0.1s">
-				<img src="imgs/trid2.jpg" class="second-boy ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="8s" swiper-animate-delay="0.1s">
-				<span class="tridtext ani" swiper-animate-effect="fadeIn" swiper-animate-duration="5s" swiper-animate-delay="1s">我在这里等你只为遇见最好的你</span>
-				<img src="imgs/units-icons.png" class="index-arrow ani infinite" swiper-animate-effect="fadeOutUp" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s">
-            </div>
-            <!-- 4 -->
-            <div class="swiper-slide page-four">
-				<img src="imgs/for1.jpg" class="four-boy ani infinite" swiper-animate-effect="bounceIn" swiper-animate-duration="10s" swiper-animate-delay="0.3s">
-				<span class="fortext1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="5s" swiper-animate-delay="1s">
-				不管你走在哪里我都会站在你看得见的地方给你肩膀依偎</span>
-				<img src="imgs/indexfo.png" class="index-fo11" />
-            </div>
-            <!-- 5 -->
-            <div class="swiper-slide page-five">
-				<img src="imgs/fribac.jpg" class="index-bg ani infinite" swiper-animate-effect="pulse" swiper-animate-duration="3.5s" swiper-animate-delay="0.3s">
-				<img src="imgs/fri1.jpg" class="fri" />
-				<img src="imgs/fri2.png" class="fri2"/>
-				<img src="imgs/indexfo.png" class="index-fri" />
-				<span class="bothNamesEnd ani span1" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="0.1s">商希超&nbsp;&&&nbsp;穆海园</span>
-				<span class="span2 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="5s" swiper-animate-delay="0.1s">2018年02月01日 星期四</span>
-				<span class="span3 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="5s" swiper-animate-delay="0.1s">敬备喜酌&nbsp;&nbsp;诚邀光临</span>
+            <div>
+                <img src="imgs/index_banner.gif" />
             </div>
         </div>
-       	<!-- 背景音乐开始 -->
-		<audio  src="music/love.mp3" id="audio_play" class="audio" controls autoplay loop></audio>
+    </header>
+    <article>
+        <div class="article-item">
+            <img src="imgs/index_article1.gif" class="article-img-phone" />
+            <div>
+                <h2>一站式发票管理平台</h2>
+                <p>从发票查询到发票存储，再到发票数据导出，<br/>一个平台让发票数据价值最大化</p>
+                <a>立即使用</a>
+            </div>
+            <img src="imgs/index_article1.gif" class="article-img-pc" />
+
+        </div>
+        <div class="article-item">
+            <img src="imgs/index_article2.gif" />
+            <div>
+                <h2>简单便捷的查验方式</h2>
+                <p>只需通过扫描发票二维码即可对发票真伪进行查验，<br/>同时还能保存发票数据以便后续查询</p>
+                <a>立即使用</a>
+            </div>
+
+        </div>
+        <div class="article-item">
+            <img src="imgs/index_article3.gif" class="article-img-phone" />
+            <div>
+                <h2>灵活易用的查验终端</h2>
+                <p>APP、小程序and公众号，都可进行扫描查验，<br/>利用最便捷的方式随时查询</p>
+                <a>立即使用</a>
+            </div>
+            <img src="imgs/index_article3.gif" class="article-img-pc" />
+
+        </div>
+        <div class="article-item">
+            <img src="imgs/index_article4.gif" />
+            <div>
+                <h2>完善高效的团队管理</h2>
+                <p>一个公司账号可分配多人查验权限，<br/>方便归集公司所有发票供财务进行管理</p>
+                <a>立即使用</a>
+            </div>
+
+        </div>
+        <div class="article-item">
+            <img src="imgs/index_article3.gif" class="article-img-phone" />
+            <div>
+                <h2>直观全面的数据体系</h2>
+                <p>数据表盘直观呈现当前发票数据情况，可随时分析，<br/>对发票数据进行全价值链管理</p>
+                <a>立即使用</a>
+            </div>
+            <img src="imgs/index_article5.gif" class="article-img-pc" />
+
+        </div>
+    </article>
+    <div class="describtion">
+        <h2>企业发票查验管理神器</h2>
+        <p class="discribtion-text">从此摆脱手工查验发票带来的苦恼，尽情享受效率提升带给你的轻松时刻伪</p>
+        <p>
+            <a class="register">立即注册</a>
+            <a class="freeuse">免费使用</a>
+        </p>
     </div>
-
-    <script src="swiper.min.js"></script>
-    <script src="swiper.animate.min.js"></script>
-    <script src="zepto.js"></script>
-    <script>
-    	function Page() {
-
-    	}
-
-    	$.extend(Page.prototype, {
-    		init: function(){
-    			this.makeSwiper();
-    		},
-
-    		makeSwiper: function() {
-    			new Swiper('.swiper-container', {
-			        direction: 'vertical',
-			        //初始化，先隐藏元素，在开始动画
-			        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
-					    swiperAnimateCache(swiper); //隐藏动画元素
-					    swiperAnimate(swiper); //初始化完成开始动画
-					},
-					//重新进入页面时，也运行动画
-					onSlideChangeEnd: function(swiper){
-					    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-					}
-			    });
-    		}
-    	});
-
-    	var page = new Page();
-    	page.init();
-
-
-
-    </script>
+    <div class="download">
+        <h2>即刻开始查验发票之旅</h2>
+        <ul>
+            <li>
+                <img class="icon" src="imgs/index_weixin.png" />
+                <span>微信公众号</span>
+                <img class="qcode" src="imgs/index_gzh.png" />
+            </li>
+            <li>
+                <img class="icon" src="imgs/index_ios.png" />
+                <span>IOS移动端</span>
+                <img class="qcode" src="imgs/index_apple.png" />
+            </li>
+            <li>
+                <img class="icon" src="imgs/index_android.png" />
+                <span>Android移动端</span>
+                <img class="qcode" src="imgs/index_and.png" />
+            </li>
+            <li>
+                <img class="icon" src="imgs/index_miniapp.png" />
+                <span>微信小程序</span>
+                <img class="qcode" src="imgs/index_xcx.png" />
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <div></div>
+        <div>
+            <h4>产品概况</h4>
+            <ul>
+                <li><a href="./product.html">产品介绍</a></li>
+                <li><a href="./price.html">价格</a></li>
+                <li><a href="./download.html">下载</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>联系我们</h4>
+            <ul>
+                <li>400-9922-752</li>
+                <li>service@deallinker.cn</li>
+                <li>北京缔联科技有限公司</li>
+            </ul>
+        </div>
+        <div>
+            <h4>合作咨询</h4>
+            <p class="footer-text">如果您有相关问题需咨询，请留下您的信息，我们会在1个工作日内予以回复</p>
+            <p class="footer-action-con">
+                <input placeholder="请输入您的姓名" class="name" />
+                <input placeholder="请输入您的电话" class="phone" />
+                <button type="button" class="submit">确定</button>
+            </p>
+        </div>
+        <div></div>
+    </footer>
+    <div class="submit-con">
+        <input placeholder="请输入您的姓名" class="name" />
+        <input placeholder="请输入您的电话" class="phone" />
+        <button type="button" class="submit">确定</button>
+    </div>
+    <div class="copyright">京公网安备 11010802022488号 京ICP备17021183号-2
+    </div>
+    <div class="mask"></div>
+    <div class="modal">
+        <span class="close">X</span>
+        <p>即将上线，敬请期待</p>
+        <button type="button" class="close">知道了</button>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="js/common.js"></script>
 </body>
+<script>
+    window.onload = function() {
+        var clientWidth = document.body.clientWidth;
+        var bannerHeight = $('header').height();
+        console.log(clientWidth)
+        var navTop = $(window).scrollTop();
+        var stylea = {
+                position: 'fixed',
+                width: "80%",
+                zIndex: 10,
+                padding: "30px 10% 20px",
+                top: 0,
+                left: 0,
+                background: 'linear-gradient(to bottom right, #23E396, #0DC5BF)'
+            },
+            styleb = {
+                display: 'flex',
+                width: "100%",
+                padding: 0,
+                'justify-content': 'space-between',
+                background: 'none',
+                position: "static",
+            };
+        console.log(navTop)
+        if (clientWidth > 768) {
+            if (navTop > bannerHeight) {
+                $('nav').css(stylea)
+            } else {
+                $('nav').css(styleb)
+            }
+            $(document).on('scroll', function() {
+                var c = $(document).scrollTop();
+                if (c > bannerHeight) {
+                    $('nav').css(stylea)
+                } else {
+                    $('nav').css(styleb)
+                }
+            })
+        }
+
+        // //点击资讯
+        $('.news').on('click', function() {
+            // var clientHeight = document.body.clientHeight;
+            $('.modal').css({
+                'display': "block"
+            });
+            $('.mask').css({
+                'display': "block"
+            });
+        })
+        $('.close').on('click', function() {
+            $('.modal').css({
+                'display': "none"
+            });
+            $('.mask').css({
+                'display': "none"
+            });
+        })
+    }
+</script>
+
 </html>
