@@ -93,6 +93,65 @@ nav ul li .login:hover {
     border-bottom: 1px solid #fff;
 }
 
+
+/* 吸顶 */
+
+.top {
+    display: none;
+    justify-content: space-between;
+    width: 80%;
+    padding: 18px 10% 8px;
+    z-index: 20;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.top img {
+    display: block;
+    width: 130px;
+    height: 45px;
+    margin-top: -10px;
+}
+
+.top ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top ul li {
+    margin-left: 2rem;
+}
+
+.top ul li a {
+    display: inline-block;
+    padding: 0px 10px 5px 10px;
+    font-size: 16px;
+    color: #000;
+    cursor: pointer;
+}
+
+.top ul li .active {
+    border-bottom: 2px solid #000;
+}
+
+.top ul li a:hover {
+    border-bottom: 2px solid #000;
+}
+
+.top ul li .login {
+    background: none;
+    padding: 5px 26px;
+    color: #000;
+    border: 1px solid #000;
+    cursor: pointer;
+    margin-top: -14px;
+    border-radius: 4px;
+}
+
+.top ul li .login:hover {
+    border-bottom: 1px solid #000;
+}
+
 footer {
     height: 204px;
     padding-top: 50px;

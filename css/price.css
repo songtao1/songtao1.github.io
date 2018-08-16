@@ -199,6 +199,7 @@ header {
     }
     .abandon-price {
         margin-top: 17px;
+        margin-left: 20px;
     }
     .article-content-con ul li:nth-child(2) {
         background-size: 30px 80px;

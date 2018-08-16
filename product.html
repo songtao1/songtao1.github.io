@@ -10,6 +10,26 @@
 </head>
 
 <body>
+    <div class="top">
+        <a href="./index.html"><img alt="" src="imgs/logo.png" /></a>
+        <ul>
+            <li>
+                <a href="./product.html" class="active">产品</a>
+            </li>
+            <li>
+                <a href="./price.html">价格</a>
+            </li>
+            <li>
+                <a href="./download.html">下载</a>
+            </li>
+            <li>
+                <a class="news">资讯</a>
+            </li>
+            <li>
+                <a class="login">登录</a>
+            </li>
+        </ul>
+    </div>
     <header>
         <img src="imgs/nav_icon.png" class="nav_btn" />
         <ul class="nav-list">
@@ -190,42 +210,7 @@
 </body>
 <script>
     window.onload = function() {
-        var clientWidth = document.body.clientWidth;
-        var bannerHeight = $('header').height();
-        console.log(clientWidth)
-        var navTop = $(window).scrollTop();
-        var stylea = {
-                position: 'fixed',
-                width: "80%",
-                zIndex: 10,
-                padding: "30px 10% 20px",
-                top: 0,
-                left: 0,
-                background: 'linear-gradient(to right, #936AFD, #848EFA)'
-            },
-            styleb = {
-                display: 'flex',
-                width: "100%",
-                padding: 0,
-                'justify-content': 'space-between',
-                background: 'none',
-                position: "static",
-            };
-        if (clientWidth > 768) {
-            $(document).on('scroll', function() {
-                if (navTop > bannerHeight) {
-                    $('nav').css(stylea)
-                } else {
-                    $('nav').css(styleb)
-                }
-                var c = $(document).scrollTop();
-                if (c > bannerHeight) {
-                    $('nav').css(stylea)
-                } else {
-                    $('nav').css(styleb)
-                }
-            })
-        }
+
         $('.news').on('click', function() {
             // var clientHeight = document.body.clientHeight;
             $('.modal').css({
