@@ -1,5 +1,6 @@
 header {
     height: 768px;
+    background-color: linear-gradient(to right, #23E396, #0DC5BF);
     background: url(../imgs/index_bac.png) no-repeat;
     background-size: cover;
     padding: 30px 10% 0px 10%;
