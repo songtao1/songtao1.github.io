@@ -1,6 +1,5 @@
 header {
     height: 768px;
-    background-color: linear-gradient(to right, #23E396, #0DC5BF);
     background: url(../imgs/index_bac.png) no-repeat;
     background-size: cover;
     padding: 30px 10% 0px 10%;
@@ -23,8 +22,12 @@ header {
     height: 470px;
 }
 
-.header-title-con div:nth-child(2) img {
+.header-title-con div:nth-child(2) p {
+    display: block;
     width: 100%;
+    height: 100%;
+    background: url(../imgs/index_banner.gif) no-repeat;
+    background-size: cover;
 }
 
 .header-title-con h1 {
