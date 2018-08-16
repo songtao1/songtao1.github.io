@@ -210,6 +210,9 @@ article .article-item:nth-child(odd) div {
 }
 
 @media (min-width: 1390px) {
+    article .article-item .article-img-pc {
+        display: none;
+    }
     .header-title-con h1 {
         font-size: 40px;
     }
